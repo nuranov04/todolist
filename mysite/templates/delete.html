@@ -1,0 +1,12 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+{% block content %}
+    <div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100vh; flex-direction: column;" class="container">
+        <p style="font-size: 30px;">Are you sure delete ?</p>
+        <form style="text-align: center;" method="post">
+            {% csrf_token %}
+            <button style="width: 150px; padding: 10px 0" class="btn btn-danger" type="submit">Yes</button>
+            <a href="{% url 'index' %}"><button style="width: 150px; padding: 10px 0" type="button" class="btn btn-success">No</button></a>
+        </form>
+    </div>
+{% endblock %}
